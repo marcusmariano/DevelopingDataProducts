@@ -46,4 +46,4 @@ Everyone can run this application open up in the RStudio and follow the steps:
 
 - Open up Presentation in the browser with the command:
 
-browseURL('index.html')
+> browseURL('index.html')
