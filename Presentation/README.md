@@ -14,16 +14,16 @@ This application is part of the course project in Developing Data Products of Da
 
 These are some file in the this directory, the most important is:
 
-- Files
+1. Files
 
-* index.Rmd
-* index.md
-* index.html
+    * index.Rmd
+    * index.md
+    * index.html
 
-- Directories
+2.  Directories
 
-* assets
-* libraries
+    * assets
+    * libraries
 
 
 ### Run Application
