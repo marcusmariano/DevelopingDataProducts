@@ -1,0 +1,9 @@
+base
+devtools
+slidify
+knitr
+ggplot2
+nlme
+mgcv
+rCharts
+reshape2

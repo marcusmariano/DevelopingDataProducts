@@ -1,0 +1,80 @@
+---
+title       : Peer Assessments
+subtitle    : Reproducible Pitch Presentation
+author      : Marcus Mariano
+job         : Mechanic Engineer
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+ext_widgets : {rCharts: ["libraries/morris","libraries/nvd3", "libraries/polycharts", "libraries/highcharts"]}
+knit        : slidify::knit2slides
+---
+
+## What is this Presentation?
+
+1. Use as second part of Peer Assessments Course Project of Developing Data Products
+2. Objective is show how to simple create an reproducible presentation using Silify
+3. This presentation is based on Diamonds dataset
+4. Use some R code and graphic
+
+--- .class #id 
+
+## Dataset Presentation
+
+**Summarize the Diamonds dataset**
+```{r echo = FALSE}
+
+library(ggplot2); library(rCharts); library(devtools)
+
+```
+
+```{r, echo=TRUE}
+
+str(diamonds)
+
+```
+
+---
+## Diamond Weight vs Cut
+**Relationship between weight of the diamond and quality of the cut**
+
+```{r, echo = FALSE}
+
+tapply(diamonds$carat, diamonds$cut, mean)
+
+```
+
+```{r chart1, echo = FALSE, eval=TRUE, results = 'asis'}
+
+require(rCharts)
+ 
+diam <- subset(as.data.frame(diamonds), clarity == "I1")
+
+plot_rchar <- nPlot(carat ~ color, group = "cut", data = diam, 
+                    type = "multiBarChart")
+
+plot_rchar$print('chart1')
+##plot_rchar$show("inline", include_assets = TRUE, cdn = F)
+
+
+## -------------------
+
+
+```
+
+
+--- .class #id 
+
+## Diamond Plot
+
+### Relationship of Price, Carat and Clarity of diamonds in dataset
+
+```{r simple-plot, echo = FALSE, fig.width = 13 , fig.height = 7, fig.align = 'center', message = F}
+
+ggplot(diamonds, aes(x = carat, y = price, color = clarity)) + geom_point()
+
+```
+
+
