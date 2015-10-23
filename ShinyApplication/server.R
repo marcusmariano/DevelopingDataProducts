@@ -36,7 +36,7 @@ shinyServer(
             hist(diamonds[ ,colm()], breaks = seq(0, max(diamonds[ ,colm()]), l = input$bins +1),
             col = input$color, main = "Histogram of Diamonds dataset", 
             xlab = names(diamonds[colm()]))
-            ##myhist(x(), y())
+            
         })## End of RenderPlot
 
         
